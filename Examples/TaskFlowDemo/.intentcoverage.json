@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "sourceRoots": ["App", "Domain", "Intents"],
+  "decisions": {
+    "create_task": {"eligibility": "eligible", "reason": "Creating a task is a user-facing action suitable for Shortcuts."},
+    "complete_task": {"eligibility": "eligible", "reason": "Completing a selected task is idempotent and useful outside the app."},
+    "delete_task": {"eligibility": "eligible", "reason": "Deleting one selected task is eligible only with explicit confirmation; no deletion intent is generated automatically."},
+    "search_tasks": {"eligibility": "eligible", "reason": "Search should return task entities for use in another shortcut action."},
+    "change_due_date": {"eligibility": "eligible", "reason": "Rescheduling a selected task is an explicit user-facing outcome."}
+  }
+}

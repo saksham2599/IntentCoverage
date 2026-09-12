@@ -1,0 +1,20 @@
+.build/
+.swiftpm/
+.intentcoverage/
+.DS_Store
+*.xcuserstate
+xcuserdata/
+.env
+__pycache__/
+*.pyc
+bin/
+# Local signing, exports and test artifacts
+*.xcresult/
+*.ipa
+*.p12
+*.p8
+*.mobileprovision
+*.provisionprofile
+.env.*
+!.env.example
+.local/

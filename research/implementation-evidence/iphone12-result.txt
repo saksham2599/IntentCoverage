@@ -1,0 +1,17 @@
+Test Case '-[TaskFlowUITests.TaskFlowBaselineTests testFiveActionsAndPersistence]' passed (58.969 seconds).
+Test Suite 'TaskFlowBaselineTests' passed at 2026-09-12 17:37:46.452.
+	 Executed 1 test, with 0 failures (0 unexpected) in 58.969 (58.971) seconds
+Test Suite 'TaskFlowUITests.xctest' passed at 2026-09-12 17:37:46.452.
+	 Executed 1 test, with 0 failures (0 unexpected) in 58.969 (58.971) seconds
+Test Suite 'All tests' passed at 2026-09-12 17:37:46.453.
+	 Executed 1 test, with 0 failures (0 unexpected) in 58.969 (58.972) seconds
+2026-09-12 17:37:47.040 xcodebuild[62989:4681159] [MT] IDETestOperationsObserverDebug: 77.387 elapsed -- Testing started completed.
+2026-09-12 17:37:47.041 xcodebuild[62989:4681159] [MT] IDETestOperationsObserverDebug: 0.000 sec, +0.000 sec -- start
+2026-09-12 17:37:47.043 xcodebuild[62989:4681159] [MT] IDETestOperationsObserverDebug: 77.387 sec, +77.387 sec -- end
+
+Test session results, code coverage, and logs:
+	<local-xcresult-bundle>
+
+** TEST EXECUTE SUCCEEDED **
+
+Testing started

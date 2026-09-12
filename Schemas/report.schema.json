@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://intentcoverage.local/schemas/report-v1.json",
+  "title": "IntentCoverage source report v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "toolVersion", "project", "scope", "sourceDigest", "capabilities", "intents", "entities", "queries", "shortcutsProviders", "diagnostics", "runtimeValidation", "siriExperience", "coverage"],
+  "properties": {
+    "schemaVersion": {"const": 1},
+    "toolVersion": {"type": "string"},
+    "project": {"type": "string"},
+    "scope": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+    "sourceDigest": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "capabilities": {"type": "array", "items": {"$ref": "#/$defs/capability"}},
+    "intents": {"type": "array", "items": {"$ref": "#/$defs/intent"}},
+    "entities": {"$ref": "#/$defs/strings"},
+    "queries": {"$ref": "#/$defs/strings"},
+    "shortcutsProviders": {"$ref": "#/$defs/strings"},
+    "diagnostics": {"$ref": "#/$defs/strings"},
+    "runtimeValidation": {"const": "not_run"},
+    "siriExperience": {"const": "not_checked"},
+    "coverage": {
+      "type": "object", "additionalProperties": false,
+      "required": ["eligible", "exposed", "unreviewed", "basis"],
+      "properties": {
+        "eligible": {"type": "integer", "minimum": 0},
+        "exposed": {"type": "integer", "minimum": 0},
+        "unreviewed": {"type": "integer", "minimum": 0},
+        "percent": {"type": ["number", "null"], "minimum": 0, "maximum": 100},
+        "basis": {"enum": ["reviewed_source_mapping", "provisional_source_mapping"]}
+      }
+    }
+  },
+  "$defs": {
+    "strings": {"type": "array", "items": {"type": "string"}},
+    "evidence": {
+      "type": "object", "additionalProperties": false,
+      "required": ["file", "line", "symbol", "kind"],
+      "properties": {"file": {"type": "string"}, "line": {"type": "integer", "minimum": 1}, "symbol": {"type": "string"}, "kind": {"enum": ["call", "declaration", "type"]}}
+    },
+    "intent": {
+      "type": "object", "additionalProperties": false,
+      "required": ["name", "evidence", "parameters", "discoverable", "calls"],
+      "properties": {"name": {"type": "string"}, "evidence": {"$ref": "#/$defs/evidence"}, "parameters": {"$ref": "#/$defs/strings"}, "discoverable": {"type": "boolean"}, "calls": {"$ref": "#/$defs/strings"}}
+    },
+    "capability": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "name", "symbol", "effect", "eligibility", "reason", "reviewState", "evidence", "intents"],
+      "properties": {
+        "id": {"type": "string"}, "name": {"type": "string"}, "symbol": {"type": "string"},
+        "effect": {"enum": ["read", "write", "destructive"]},
+        "eligibility": {"enum": ["eligible", "excluded", "needs_review"]},
+        "reason": {"type": "string", "minLength": 1},
+        "reviewState": {"enum": ["reviewed", "unreviewed"]},
+        "evidence": {"type": "array", "items": {"$ref": "#/$defs/evidence"}, "minItems": 1},
+        "intents": {"$ref": "#/$defs/strings"}
+      }
+    }
+  }
+}

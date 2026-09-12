@@ -1,0 +1,17 @@
+IntentCoverage · TaskFlowDemo
+
+App Intent source coverage: 60% (3/5)
+Basis: reviewed_source_mapping
+Unreviewed candidates: 0
+
+○ Change Due Date  [MISSING]
+✓ Complete Task  [EXPOSED]  CompleteTaskIntent
+✓ Create Task  [EXPOSED]  CreateTaskIntent
+○ Delete Task  [MISSING]
+✓ Search Tasks  [EXPOSED]  FindTasksIntent
+
+Runtime validation: not_run
+Siri experience: not_checked
+Note: Source mapping only; Xcode target membership and runtime behavior are not inferred.
+Note: Discovery supports explicit Type.shared.method calls from SwiftUI View/App types. Instance receivers, macro expansion, conditional declarations and dynamic dispatch need review.
+intentcoverage: Mapped intent removed: search_tasks (SearchTasksIntent)

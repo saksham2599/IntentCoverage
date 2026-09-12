@@ -1,0 +1,23 @@
+name: Bug report
+description: Report incorrect analysis, generation, or CLI behavior
+title: "[Bug]: "
+body:
+  - type: textarea
+    id: behavior
+    attributes:
+      label: Expected and actual behavior
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Minimal reproduction
+      description: Include sanitized Swift, configuration, CLI command and output. Never include private source or credentials.
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Commit, macOS, Xcode and Swift versions
+    validations:
+      required: true

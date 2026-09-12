@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "observedAt": "2026-09-12",
+  "host": {
+    "macOS": "26.6.2",
+    "macOSBuild": "25G83",
+    "xcode": "26.6",
+    "xcodeBuild": "17F113",
+    "swift": "6.3.3",
+    "iPhoneOSSDK": "26.5",
+    "developerDirectory": "/Applications/Xcode.app/Contents/Developer"
+  },
+  "device": {
+    "model": "iPhone 12",
+    "osVersion": "26.6.1",
+    "osBuild": "23G83",
+    "connectionAtInspection": "connected",
+    "developerMode": "enabled"
+  },
+  "appIntentsTesting": {
+    "documentedMinimumIOS": "27.0",
+    "documentedMinimumMacOS": "27.0",
+    "frameworkFoundInActiveIPhoneDeveloperFrameworks": false,
+    "frameworkFoundInActiveIPhoneSDKFrameworks": false,
+    "runtimeStatus": "unavailable_on_current_setup",
+    "apiDocumentation": "https://developer.apple.com/documentation/appintentstesting",
+    "availabilityMetadata": "https://developer.apple.com/tutorials/data/documentation/appintentstesting.json"
+  },
+  "verification": {
+    "sources": [
+      "xcodebuild -version",
+      "xcrun swift --version",
+      "xcode-select -p",
+      "iPhoneOS.sdk/SDKSettings.json",
+      "sw_vers",
+      "xcrun devicectl list devices --json-output",
+      "Apple public DocC API metadata"
+    ],
+    "appBuilt": false,
+    "appInstalled": false,
+    "runtimeTestsRun": false,
+    "simulatorsUsed": false,
+    "providerCallsMade": false,
+    "systemUpdatesMade": false
+  },
+  "phase": "phase-0-before-implementation"
+}

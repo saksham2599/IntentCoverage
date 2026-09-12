@@ -1,0 +1,16 @@
+name: Feature request
+description: Propose a focused capability or improvement
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem and concrete Swift example
+    validations:
+      required: true
+  - type: textarea
+    id: verification
+    attributes:
+      label: How would we verify the result independently?
+      description: Include false-positive risks and expected source or runtime evidence.
+    validations:
+      required: true

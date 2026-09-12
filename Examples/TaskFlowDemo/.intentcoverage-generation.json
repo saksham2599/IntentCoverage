@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "adapter": "taskflow-search-v1",
+  "bundleIdentifier": "org.example.intentcoverage.taskflow",
+  "contractDigests": {
+    "Domain/TaskRepository.swift": "2785c616b089cd754be72ff02787c00b182d67fa9b8e593422d7bb4f50d0d49c",
+    "Intents/TaskEntity.swift": "7f4b754503b071f8df1a796f6f6084bf5a319703622d5b201768320052dbfe3d"
+  }
+}

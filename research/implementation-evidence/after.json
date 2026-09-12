@@ -1,0 +1,215 @@
+{
+  "capabilities" : [
+    {
+      "effect" : "write",
+      "eligibility" : "eligible",
+      "evidence" : [
+        {
+          "file" : "Domain/TaskRepository.swift",
+          "kind" : "declaration",
+          "line" : 72,
+          "symbol" : "TaskRepository.changeDueDate"
+        },
+        {
+          "file" : "App/TaskFlowApp.swift",
+          "kind" : "call",
+          "line" : 130,
+          "symbol" : "TaskRepository.changeDueDate"
+        }
+      ],
+      "id" : "change_due_date",
+      "intents" : [
+
+      ],
+      "name" : "Change Due Date",
+      "reason" : "Rescheduling a selected task is an explicit user-facing outcome.",
+      "reviewState" : "reviewed",
+      "symbol" : "TaskRepository.changeDueDate"
+    },
+    {
+      "effect" : "write",
+      "eligibility" : "eligible",
+      "evidence" : [
+        {
+          "file" : "Domain/TaskRepository.swift",
+          "kind" : "declaration",
+          "line" : 57,
+          "symbol" : "TaskRepository.completeTask"
+        },
+        {
+          "file" : "App/TaskFlowApp.swift",
+          "kind" : "call",
+          "line" : 117,
+          "symbol" : "TaskRepository.completeTask"
+        }
+      ],
+      "id" : "complete_task",
+      "intents" : [
+        "CompleteTaskIntent"
+      ],
+      "name" : "Complete Task",
+      "reason" : "Completing a selected task is idempotent and useful outside the app.",
+      "reviewState" : "reviewed",
+      "symbol" : "TaskRepository.completeTask"
+    },
+    {
+      "effect" : "write",
+      "eligibility" : "eligible",
+      "evidence" : [
+        {
+          "file" : "Domain/TaskRepository.swift",
+          "kind" : "declaration",
+          "line" : 50,
+          "symbol" : "TaskRepository.createTask"
+        },
+        {
+          "file" : "App/TaskFlowApp.swift",
+          "kind" : "call",
+          "line" : 110,
+          "symbol" : "TaskRepository.createTask"
+        }
+      ],
+      "id" : "create_task",
+      "intents" : [
+        "CreateTaskIntent"
+      ],
+      "name" : "Create Task",
+      "reason" : "Creating a task is a user-facing action suitable for Shortcuts.",
+      "reviewState" : "reviewed",
+      "symbol" : "TaskRepository.createTask"
+    },
+    {
+      "effect" : "destructive",
+      "eligibility" : "eligible",
+      "evidence" : [
+        {
+          "file" : "Domain/TaskRepository.swift",
+          "kind" : "declaration",
+          "line" : 62,
+          "symbol" : "TaskRepository.deleteTask"
+        },
+        {
+          "file" : "App/TaskFlowApp.swift",
+          "kind" : "call",
+          "line" : 124,
+          "symbol" : "TaskRepository.deleteTask"
+        }
+      ],
+      "id" : "delete_task",
+      "intents" : [
+
+      ],
+      "name" : "Delete Task",
+      "reason" : "Deleting one selected task is eligible only with explicit confirmation; no deletion intent is generated automatically.",
+      "reviewState" : "reviewed",
+      "symbol" : "TaskRepository.deleteTask"
+    },
+    {
+      "effect" : "read",
+      "eligibility" : "eligible",
+      "evidence" : [
+        {
+          "file" : "Domain/TaskRepository.swift",
+          "kind" : "declaration",
+          "line" : 68,
+          "symbol" : "TaskRepository.searchTasks"
+        },
+        {
+          "file" : "App/TaskFlowApp.swift",
+          "kind" : "call",
+          "line" : 100,
+          "symbol" : "TaskRepository.searchTasks"
+        }
+      ],
+      "id" : "search_tasks",
+      "intents" : [
+        "SearchTasksIntent"
+      ],
+      "name" : "Search Tasks",
+      "reason" : "Search should return task entities for use in another shortcut action.",
+      "reviewState" : "reviewed",
+      "symbol" : "TaskRepository.searchTasks"
+    }
+  ],
+  "coverage" : {
+    "basis" : "reviewed_source_mapping",
+    "eligible" : 5,
+    "exposed" : 3,
+    "percent" : 60,
+    "unreviewed" : 0
+  },
+  "diagnostics" : [
+    "Source mapping only; Xcode target membership and runtime behavior are not inferred.",
+    "Discovery supports explicit Type.shared.method calls from SwiftUI View/App types. Instance receivers, macro expansion, conditional declarations and dynamic dispatch need review."
+  ],
+  "entities" : [
+    "TaskEntity"
+  ],
+  "intents" : [
+    {
+      "calls" : [
+        "TaskRepository.completeTask"
+      ],
+      "discoverable" : true,
+      "evidence" : {
+        "file" : "Intents/CompleteTaskIntent.swift",
+        "kind" : "type",
+        "line" : 3,
+        "symbol" : "CompleteTaskIntent"
+      },
+      "name" : "CompleteTaskIntent",
+      "parameters" : [
+        "task"
+      ]
+    },
+    {
+      "calls" : [
+        "TaskRepository.createTask"
+      ],
+      "discoverable" : true,
+      "evidence" : {
+        "file" : "Intents/CreateTaskIntent.swift",
+        "kind" : "type",
+        "line" : 3,
+        "symbol" : "CreateTaskIntent"
+      },
+      "name" : "CreateTaskIntent",
+      "parameters" : [
+        "title"
+      ]
+    },
+    {
+      "calls" : [
+        "TaskRepository.searchTasks"
+      ],
+      "discoverable" : true,
+      "evidence" : {
+        "file" : "Intents/SearchTasksIntent.swift",
+        "kind" : "type",
+        "line" : 3,
+        "symbol" : "SearchTasksIntent"
+      },
+      "name" : "SearchTasksIntent",
+      "parameters" : [
+        "query"
+      ]
+    }
+  ],
+  "project" : "TaskFlowDemo",
+  "queries" : [
+    "TaskEntityQuery"
+  ],
+  "runtimeValidation" : "not_run",
+  "schemaVersion" : 1,
+  "scope" : [
+    "App",
+    "Domain",
+    "Intents"
+  ],
+  "shortcutsProviders" : [
+    "TaskFlowShortcuts"
+  ],
+  "siriExperience" : "not_checked",
+  "sourceDigest" : "7b83a24766a0460e3de77c20dde938415aa5d4bac5ab4894a952f17facc70709",
+  "toolVersion" : "0.1.0"
+}

@@ -1,0 +1,5 @@
+Developer directory: /Applications/Xcode.app/Contents/Developer
+AppIntentsTesting framework: absent
+Runtime requirement: iOS 27+ on the physical iPhone 12
+Runtime status: not checked
+Scanner: local; no API key required
